@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herramientas y Validador - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-layout" style="display: none;">
+      <div class="ph">
+        <h1>Centro de Herramientas</h1>
+        <p>Validador de nomenclaturas, calculadoras de peso optimizado y utilidades para enlaces SIRV.</p>
+      </div>
+      
+      <div class="tabs">
+        <button class="tbtn active" onclick="selectTab(this,'t-v')"><i class="fas fa-shield-alt"></i> Validador Inteligente</button>
+        <button class="tbtn" onclick="selectTab(this,'t-p')"><i class="fas fa-weight"></i> Calculadoras de Peso</button>
+        <button class="tbtn" onclick="selectTab(this,'t-u')"><i class="fas fa-link"></i> URL Dinámica</button>
+        <button class="tbtn" onclick="selectTab(this,'t-s')"><i class="fas fa-compass"></i> ¿Dónde subo?</button>
+      </div>
+
+      <!-- VALIDADOR -->
+      <div class="tc active" id="t-v">
+        <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(280px, 1fr);gap:16px;">
+          <div class="panel">
+            <div class="ptit"><i class="fas fa-shield-alt"></i>Nombre del archivo</div>
+            <div class="pdesc">Pega el nombre de tu archivo con extensión para verificar si aprueba los lineamientos.</div>
+            <div class="fg">
+              <label class="fl">Tipo de asset</label>
+              <select class="fs" id="vt" onchange="validateName()" style="margin-bottom:12px;background:var(--dk3)">
+                <option value="img">Maqueta General (Imagen)</option>
+                <option value="ban">Banner Comercial / Pauta</option>
+                <option value="vid">Video</option>
+                <option value="">Otro archivo (Desconocido)</option>
+              </select>
+            </div>
+            <div class="fg">
+              <input class="fi mo" id="vi" placeholder="hero-cont-linea-celulares.webp" oninput="validateName()"
+                style="font-size:16px;border:2px solid var(--bd2)">
+            </div>
+            
+            <div class="card" style="margin-top:20px;background:var(--dk)">
+              <h3 style="font-size:14px;margin-bottom:4px"><i class="fas fa-info-circle" style="color:var(--inf);margin-right:5px"></i> Recordatorio</h3>
+              <p style="font-size:12px;color:var(--tx2)" id="vr-hint">Las maquetas usan la estructura <code>[tipo]-[uso]-[detalle].[ext]</code>. Los banners comerciales usan <code>[tienda]-[marca]-[campaña]-[zona].webp</code>.</p>
+            </div>
+          </div>
+          
+          <div class="panel">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+              <div id="vcirc" class="score sh"><span id="vsn" class="sn">—</span><span class="slb">Score</span></div>
+              <div>
+                <div style="font-size:16px;font-weight:700;color:var(--tx)" id="vtit">Esperando...</div>
+                <div style="font-size:14px;color:var(--tx2)" id="vsub">Escribe un nombre para validar</div>
+              </div>
+            </div>
+            <div style="font-size:11px;color:var(--tx3);display:flex;justify-content:space-between;margin-bottom:2px">
+              <span>Calidad del nombre</span><span id="vpct">0%</span>
+            </div>
+            <div class="pb">
+              <div class="pf blue" id="vbar" style="width:0%"></div>
+            </div>
+            <div id="vcks" style="margin-top:10px"></div>
+            <div id="vsugg" style="margin-top:8px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PESO -->
+      <div class="tc" id="t-p">
+        <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(280px, 1fr);gap:16px;">
+          <div class="panel">
+            <div style="display:flex;gap:10px;margin-bottom:16px">
+              <button class="btn bp" id="btn-calc-img" onclick="swCalc('img')" style="flex:1;justify-content:center"><i class="fas fa-image"></i> Imagen</button>
+              <button class="btn bs" id="btn-calc-vid" onclick="swCalc('vid')" style="flex:1;justify-content:center"><i class="fas fa-video"></i> Video</button>
+            </div>
+            
+            <!-- IMG CALC -->
+            <div id="calc-img">
+              <div class="ptit"><i class="fas fa-image" style="color:var(--tx3)"></i> Estimador de Imagen</div>
+              <div class="pdesc" style="margin-bottom:12px">Estima el peso y compara contra los límites según la resolución.</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                <div class="fg"><label class="fl">Ancho (px)</label><input class="fi" id="pw" type="number" value="1920" oninput="calculateImageWeight()"></div>
+                <div class="fg"><label class="fl">Alto (px)</label><input class="fi" id="ph2" type="number" value="600" oninput="calculateImageWeight()"></div>
+              </div>
+              <div class="fg"><label class="fl">Formato</label>
+                <select class="fs" id="pf" onchange="calculateImageWeight()">
+                  <option value="webp">WebP (recomendado)</option>
+                  <option value="svg">SVG</option>
+                  <option value="jpg">JPG</option>
+                  <option value="png">PNG (muy pesado)</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label class="fl">Calidad de compresión: <strong id="pqv">80</strong>%</label>
+                <input type="range" id="pq" min="1" max="100" value="80" oninput="document.getElementById('pqv').textContent=this.value; calculateImageWeight()" style="width:100%">
+              </div>
+              <div class="fg" style="margin-bottom:0"><label class="fl">Complejidad visual</label>
+                <select class="fs" id="pc" onchange="calculateImageWeight()">
+                  <option value="0.6">Simple (fondos planos)</option>
+                  <option value="0.85" selected>Normal (producto en fondo/texto)</option>
+                  <option value="1.1">Compleja (fotografía, ruido, texturas)</option>
+                </select>
+              </div>
+            </div>
+            
+            <!-- VID CALC -->
+            <div id="calc-vid" style="display:none">
+              <div class="ptit"><i class="fas fa-video" style="color:var(--tx3)"></i> Estimador de Video</div>
+              <div class="pdesc" style="margin-bottom:12px">Asegura que el video sea compatible con el límite de 10 MB.</div>
+              <div class="fg"><label class="fl">Duración (segundos)</label><input class="fi" id="vw-sec" type="number" value="15" oninput="calculateVideoWeight()"></div>
+              <div class="fg" style="margin-bottom:0"><label class="fl">Formato y Calidad Web</label>
+                <select class="fs" id="vw-res" onchange="calculateVideoWeight()">
+                  <option value="1080p">1080p Alta Calidad (~2500 kbps)</option>
+                  <option value="1080p-low" selected>1080p Compresión Web (~1500 kbps) Recomendado</option>
+                  <option value="720p">720p Media Calidad (~1200 kbps)</option>
+                  <option value="low">Menor a 720p (~800 kbps)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="panel">
+              <div class="ptit"><i class="fas fa-chart-bar"></i>Resultado Estimado</div>
+              <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+                <div id="wsc" class="score sh" style="width:62px;height:62px"><span id="wnum" class="sn" style="font-size:18px">—</span></div>
+                <div style="flex:1">
+                  <div style="font-size:16px;font-weight:700;color:var(--tx);margin-bottom:2px" id="wst">Calculando...</div>
+                  <div style="font-size:14px;color:var(--tx2)" id="wds">Llena los datos a la izquierda.</div>
+                </div>
+              </div>
+              <div id="wbr"></div>
+            </div>
+            
+            <div class="card" style="background:#FFFBEB; border-color:#FEF3C7">
+              <h3 style="font-size:15px; color:#92400E; margin-bottom:8px"><i class="fas fa-lightbulb"></i> Tips de Optimización</h3>
+              <ul style="font-size:12px; color:#B45309; padding-left:14px">
+                <li style="margin-bottom:6px"><strong>WebP SIEMPRE:</strong> Reemplaza JPGs enviándolos por Squoosh o plugins de Figma WebP. Ahorras ~40% de peso.</li>
+                <li style="margin-bottom:6px"><strong>Sin silencios:</strong> Elimina las pistas de audio de los videos que no lo requieran. (Mute ≠ Sin Pista).</li>
+                <li><strong>TinyPNG:</strong> Si forzosamente usas PNG transparente, pásalo SIEMPRE por TinyPNG/Optipng.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- URL -->
+      <div class="tc" id="t-u">
+        <div style="display:grid;grid-template-columns:minmax(0, 1fr) minmax(280px, 1fr);gap:16px;">
+          <div class="panel">
+            <div class="ptit"><i class="fas fa-link"></i>Parámetros de imagen SIRV</div>
+            <div class="pdesc">Transforma imágenes al vuelo sin crear archivos nuevos. Ideal para copias mobile.</div>
+            <div class="fg"><label class="fl">Ruta del archivo en SIRV</label>
+              <input class="fi mo" id="ub"
+                placeholder="ecommerce/home/alkosto/visuales/2026/enero/banner.webp" oninput="buildSirvURL()">
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <div class="fg"><label class="fl">Ancho (px)</label><input class="fi" id="uw" type="number"
+                  placeholder="800" oninput="buildSirvURL()"></div>
+              <div class="fg"><label class="fl">Alto (px)</label><input class="fi" id="uh" type="number"
+                  placeholder="600" oninput="buildSirvURL()"></div>
+            </div>
+            <div class="fg">
+              <label class="fl">Calidad: <strong id="uqv">80</strong>%</label>
+              <input type="range" id="uq" min="1" max="100" value="80"
+                oninput="document.getElementById('uqv').textContent=this.value; buildSirvURL()" style="width:100%">
+            </div>
+            <div class="fg"><label class="fl">Formato Especial</label>
+              <select class="fs" id="uf" onchange="buildSirvURL()">
+                <option value="optimal">optimal — SIRV elige el mejor (recomendado)</option>
+                <option value="webp">webp</option>
+                <option value="jpg">jpg</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label style="display:flex;align-items:center;gap:7px;font-size:14px;cursor:pointer;color:var(--tx2);margin-bottom:5px">
+                <input type="checkbox" id="uth" onchange="buildSirvURL()">Forzar recorte cuadrado perfecto (Thumbnail)
+              </label>
+              <label style="display:flex;align-items:center;gap:7px;font-size:14px;cursor:pointer;color:var(--tx2)">
+                <input type="checkbox" id="ush" onchange="buildSirvURL()">Nitidez extra (Sharpening=30)
+              </label>
+            </div>
+          </div>
+          <div>
+            <div class="panel">
+              <div class="ptit"><i class="fas fa-eye"></i>URL generada</div>
+              <div class="rbox" style="margin-bottom:12px"><span id="utxt" class="ph2">Ingresa la ruta base...</span><button class="cpb"
+                  id="ucpb" onclick="copyText('utxt','URL copiada')" style="display:none">Copiar</button></div>
+              <div class="fl" style="margin-bottom:6px">Parámetros inyectados:</div>
+              <div id="upar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- SUGERENCIAS -->
+      <div class="tc" id="t-s">
+        <div class="panel" style="max-width:500px;margin:0 auto">
+          <div class="ptit"><i class="fas fa-compass" style="color:var(--pr)"></i> ¿No sabes dónde subir tu archivo?</div>
+          <div class="pdesc">Responde e intentaremos sugerir la ruta óptima.</div>
+          
+          <div class="fg" style="margin-top:20px">
+            <label class="fl">¿Para qué usarás este asset?</label>
+            <select class="fs" id="su-need" onchange="suggestUpload()">
+              <option value="">— Seleccionar —</option>
+              <option value="ban">Es un banner promocional que caducará en unos días</option>
+              <option value="home">Es un botón o fondo fijo para el Home</option>
+              <option value="land">Es un elemento permanente de una Landing de marca / categoría</option>
+              <option value="cat">Es la separata quincenal / mensual en PDF</option>
+            </select>
+          </div>
+          <div id="su-res" style="margin-top:16px;background:var(--dk);border-radius:4px;padding:14px;border:1px dashed var(--bd2)">
+             <span class="ph2" style="font-size:14px;color:var(--tx3)">Selecciona qué quieres hacer arriba.</span>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    renderLayout('herramientas', 'Validador y Calculadoras', 'Tool');
+    // Init validators and calculators
+    window.onLayoutReady = function() {
+      if(typeof validateName === 'function') validateName();
+      if(typeof calculateImageWeight === 'function') calculateImageWeight();
+      if(typeof calculateVideoWeight === 'function') calculateVideoWeight();
+    }
+  </script>
+</body>
+</html>

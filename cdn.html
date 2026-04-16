@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CDN, Dominios y Cache - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-layout" style="display: none;">
+      <div class="ph">
+        <h1>CDN, Dominios y Cache</h1>
+        <p>Cómo funciona la entrega de assets en SIRV y cómo manejar el cache.</p>
+      </div>
+      <div class="al aw"><i class="fas fa-exclamation-triangle"></i><span>El CDN de SIRV maneja <strong>tiempos de
+            cache largos por defecto</strong>. Aunque reemplaces un archivo, el browser o CDN puede seguir sirviendo
+          la versión anterior durante horas o días. <strong>No asumir que un reemplazo se verá de
+            inmediato.</strong></span></div>
+      <div class="st">Dominios por Tienda</div>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Tienda</th>
+              <th>Dominio CDN</th>
+              <th>Banners (especial)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Alkosto</strong></td>
+              <td><code>https://cdn.dam.alkosto.com/</code></td>
+              <td><code>https://ads.dam.alkosto.com/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Ktronix</strong></td>
+              <td><code>https://cdn.dam.ktronix.com/</code></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Alkomprar</strong></td>
+              <td><code>https://cdn.dam.alkomprar.com/</code></td>
+              <td>—</td>
+            </tr>
+            <tr>
+              <td><strong>Kalley</strong></td>
+              <td><code>https://cdn.dam.kalley.com.co/</code></td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="st">Ejemplo de URL completa</div>
+      <div class="panel">
+        <div class="cb"><span class="cm"># Ejemplo real</span>
+https://cdn.dam.alkomprar.com/ecommerce/landings/alkomprar/ofertas/2026/marzo/temporada-futbol/hero-dest-richard-mob.webp
+
+<span class="cm"># Desglose:</span>
+<span class="ck2">Dominio:</span> cdn.dam.alkomprar.com
+<span class="ck2">Sección:</span> /ecommerce/landings/alkomprar/ofertas
+<span class="ck2">Temporalidad:</span> 2026/marzo
+<span class="ck2">Evento:</span> temporada-futbol
+<span class="ck2">Archivo:</span> <span class="cv">hero-dest-richard-mob.webp</span> <span class="cm">(sigue nomenclatura estándar)</span>
+        </div>
+      </div>
+      <div class="st">Cómo forzar actualización inmediata</div>
+      <div class="card" style="margin-bottom:16px">
+        <h3 style="margin-bottom:8px"><i class="fas fa-bolt" style="color:var(--wn);margin-right:6px"></i>Cambiar el
+          nombre del archivo</h3>
+        <p style="font-size:14px;color:var(--tx2);margin-bottom:10px">La única forma segura de que un cambio se vea
+          inmediatamente es subir el archivo con un nombre diferente. Esto genera una nueva URL, un nuevo cache y
+          carga inmediata del recurso.</p>
+        <div class="exrow" style="margin-bottom:0">
+          <div class="ex exg">
+            <div class="exl exlg"><i class="fas fa-check-circle"></i>Correcto</div>
+            <div class="exc">banner-hero-enero-v2.webp<br><span style="color:var(--tx3)">→ Nueva URL → carga
+                inmediata</span></div>
+          </div>
+          <div class="ex exr">
+            <div class="exl exlr"><i class="fas fa-times-circle"></i>No garantiza cambio</div>
+            <div class="exc">banner-hero-enero.webp<br><span style="color:var(--tx3)">→ Misma URL → puede quedar
+                cacheado</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="al as"><i class="fas fa-info-circle"></i><span>La carpeta <code>/ecommerce/banners</code> tiene
+          cache más corto y mayor flexibilidad para cambios. Está diseñada para campañas de alta rotación. Alkosto usa
+          el dominio especial <code>ads.dam.alkosto.com</code> para banners comerciales.</span></div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script>
+    renderLayout('cdn', 'CDN y Cache', 'Técnico');
+  </script>
+</body>
+</html>

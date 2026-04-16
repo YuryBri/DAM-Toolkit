@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estructura de Carpetas - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="app-layout" style="display: none;">
+    <div class="ph">
+      <h1>Estructura de Carpetas</h1>
+      <p>Estructura estandarizada y replicable entre tiendas. Ruta base del sistema: <code>/ecommerce/</code></p>
+    </div>
+    <div class="al ai"><i class="fas fa-info-circle"></i><span><strong>Regla de oro:</strong> Nombres de carpetas y
+        archivos siempre en <strong>minúsculas</strong>, sin espacios ni acentos, usando guiones medios. Ej:
+        <code>banner-hero-home.webp</code></span></div>
+    <div style="display:grid;grid-template-columns:minmax(0, 1.25fr) minmax(320px, 1fr);gap:20px;">
+      <div class="panel">
+        <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;flex-wrap:wrap;">
+          <div class="sw" style="max-width:200px;margin-left:0;">
+            <i class="fas fa-search" style="color:var(--tx3)"></i>
+            <input class="fi" id="tsr" placeholder="Buscar en el árbol..." style="padding-left:28px;"
+              oninput="filterTree(this.value)">
+          </div>
+          <button class="btn bs" style="font-size:12px;padding:6px 10px;height:34px" onclick="expandTreeAll()"><i
+              class="fas fa-expand-alt"></i> Expandir</button>
+          <button class="btn bs" style="font-size:12px;padding:6px 10px;height:34px" onclick="collapseTreeAll()"><i
+              class="fas fa-compress-alt"></i> Contraer</button>
+        </div>
+        <div id="sirv-tree" style="margin-top: 10px;"></div>
+      </div>
+        <div>
+          <div class="card" style="margin-bottom:12px">
+            <h3 style="margin-bottom:9px;font-size:15px"><i class="fas fa-map-signs"
+                style="color:var(--pr);margin-right:5px"></i>Dónde subir</h3>
+            <div style="font-size:14px">
+              <div style="padding:6px 0;border-bottom:1px solid var(--bd)"><span class="tag tb"
+                  style="margin-right:5px;font-size:10px">HOME</span><code>home/[tienda]/visuales/[año]/[mes]</code>
+              </div>
+              <div style="padding:6px 0;border-bottom:1px solid var(--bd)"><span class="tag ty"
+                  style="margin-right:5px;font-size:10px">BANNER</span><code>banners/[tienda]/[año]/[cat]</code></div>
+              <div style="padding:6px 0;border-bottom:1px solid var(--bd)"><span class="tag tg"
+                  style="margin-right:5px;font-size:10px">LANDING</span><code>landings/[tienda]/[tipo]</code></div>
+              <div style="padding:6px 0;border-bottom:1px solid var(--bd)"><span class="tag tn"
+                  style="margin-right:5px;font-size:10px">ALGOLIA</span><code>algolia/[marcas|logos|cat]</code></div>
+              <div style="padding:6px 0"><span class="tag tn"
+                  style="margin-right:5px;font-size:10px">CATÁLOGO</span><code>catalog/</code></div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:9px;font-size:15px"><i class="fas fa-book"
+                style="color:var(--wn);margin-right:5px"></i>Códigos de categoría</h3>
+            <div id="codgrid" style="display:grid;grid-template-columns:1fr;gap:4px;font-size:12px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/layout.js"></script>
+    <script>
+      window.onLayoutReady = function () {
+        if (document.getElementById('sirv-tree')) {
+          document.getElementById('sirv-tree').innerHTML = buildTreeHTML(folderStructure);
+          // Expandir por defecto el nodo principal (ecommerce)
+          const firstLi = document.querySelector('#sirv-tree > ul > li.has-children');
+          if (firstLi) {
+            firstLi.classList.add('open');
+            const icon = firstLi.querySelector('.fi2');
+            if (icon) {
+              icon.classList.remove('fa-folder');
+              icon.classList.add('fa-folder-open');
+            }
+          }
+        }
+        if (typeof buildCategoryGrid === 'function') buildCategoryGrid();
+      };
+      renderLayout('estructura', 'Estructura de Carpetas', 'DAM');
+    </script>
+</body>
+
+</html>

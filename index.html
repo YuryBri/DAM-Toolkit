@@ -1,75 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Conceptual de Estructura SIRV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <div class="header-content">
-                <h1>Estructura de Carpetas <span>SIRV</span></h1>
-                <p>Guía interactiva para la subida de material</p>
-                <div class="important-tip">
-                    <i class="fas fa-info-circle"></i>
-                    <span><strong>consejo importante:</strong> todos los nombres de archivos y carpetas deben estar en minúsculas, sin espacios ni acentos, utilizando guiones medios para separar palabras.</span>
-                </div>
-                
-                <details class="nomenclature-details">
-                    <summary><i class="fas fa-book"></i> guía de nomenclatura de categorías (códigos abreviados)</summary>
-                    <div class="nomenclature-grid">
-                        <div class="nom-item"><span class="nom-name">celulares</span><span class="nom-code">cel</span></div>
-                        <div class="nom-item"><span class="nom-name">computadores</span><span class="nom-code">comp</span></div>
-                        <div class="nom-item"><span class="nom-name">grandes electrodomésticos</span><span class="nom-code">gelec</span></div>
-                        <div class="nom-item"><span class="nom-name">pequeños electrodomésticos</span><span class="nom-code">pelec</span></div>
-                        <div class="nom-item"><span class="nom-name">tv</span><span class="nom-code">tv</span></div>
-                        <div class="nom-item"><span class="nom-name">accesorios</span><span class="nom-code">acce</span></div>
-                        <div class="nom-item"><span class="nom-name">videojuegos</span><span class="nom-code">viju</span></div>
-                        <div class="nom-item"><span class="nom-name">audio</span><span class="nom-code">aud</span></div>
-                        <div class="nom-item"><span class="nom-name">cámaras</span><span class="nom-code">cam</span></div>
-                        <div class="nom-item"><span class="nom-name">pines</span><span class="nom-code">pin</span></div>
-                        <div class="nom-item"><span class="nom-name">hogar</span><span class="nom-code">hog</span></div>
-                        <div class="nom-item"><span class="nom-name">casa inteligente</span><span class="nom-code">cain</span></div>
-                        <div class="nom-item"><span class="nom-name">deportes</span><span class="nom-code">dep</span></div>
-                        <div class="nom-item"><span class="nom-name">llantas y motos</span><span class="nom-code">llamot</span></div>
-                        <div class="nom-item"><span class="nom-name">juguetes</span><span class="nom-code">jug</span></div>
-                        <div class="nom-item"><span class="nom-name">home</span><span class="nom-code">home</span></div>
-                        <div class="nom-item"><span class="nom-name">cocina</span><span class="nom-code">coci</span></div>
-                        <div class="nom-item"><span class="nom-name">refrigeración</span><span class="nom-code">refri</span></div>
-                        <div class="nom-item"><span class="nom-name">lavado</span><span class="nom-code">lava</span></div>
-                        <div class="nom-item"><span class="nom-name">smartwatch</span><span class="nom-code">swatch</span></div>
-                        <div class="nom-item"><span class="nom-name">audífonos</span><span class="nom-code">aufo</span></div>
-                        <div class="nom-item"><span class="nom-name">mercado</span><span class="nom-code">mer</span></div>
-                    </div>
-                </details>
-            </div>
-            <div class="search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar carpeta...">
-            </div>
-            <div class="controls">
-                <button id="btnExpandAll" class="btn btn-primary"><i class="fas fa-expand-arrows-alt"></i> Expandir Todo</button>
-                <button id="btnCollapseAll" class="btn btn-secondary"><i class="fas fa-compress-arrows-alt"></i> Contraer Todo</button>
-            </div>
-        </header>
-
-        <main class="tree-container">
-            <div id="folder-tree" class="tree">
-                <!-- El árbol se renderizará aquí dinámicamente usando JavaScript -->
-            </div>
-        </main>
-        
-        <div id="noResults" class="no-results hidden">
-            <i class="fas fa-folder-open"></i>
-            <p>No se encontraron carpetas con ese nombre.</p>
+  <div id="app-layout" style="display: none;">
+      <div class="ph">
+        <h1>Documentación General del Entorno SIRV</h1>
+        <p>Guía de organización, nomenclatura y optimización para assets de <strong>Alkosto</strong>,
+          <strong>Ktronix</strong>, <strong>Alkomprar</strong> y <strong>Kalley</strong>.
+        </p>
+      </div>
+      <div class="tipcard">
+        <div class="tiplbl"><i class="fas fa-bolt"></i>Objetivo del sistema</div>
+        <h3>Mantener un entorno limpio, escalable y de alto rendimiento</h3>
+        <p>Define estructura de carpetas, reglas de nomenclatura, políticas de depuración y guías de optimización para
+          facilitar la colaboración entre equipos y mejorar el rendimiento del sitio.</p>
+      </div>
+      <div class="st">Resumen</div>
+      <div class="grid g4" style="margin-bottom:20px">
+        <div class="stat">
+          <div class="stlbl">Tiendas</div>
+          <div class="stval">4</div>
+          <div class="stsub">Alkosto · Ktronix · Kalley · Alkomprar</div>
         </div>
-    </div>
+        <div class="stat">
+          <div class="stlbl">Secciones DAM</div>
+          <div class="stval">6</div>
+          <div class="stsub">home · dinámicos · banners · catalog · landings · algolia</div>
+        </div>
+        <div class="stat">
+          <div class="stlbl">Herramientas</div>
+          <div class="stval">2</div>
+          <div class="stsub">URL dinámica · Validador · Calculadoras</div>
+        </div>
+        <div class="stat">
+          <div class="stlbl">Ruta base</div>
+          <div class="stval" style="font-size:17px;font-family:var(--mono)">/ecommerce/</div>
+          <div class="stsub">Todas las tiendas</div>
+        </div>
+      </div>
+      <div class="st">Módulos</div>
+      <div class="grid g3">
+        <div class="card ck" onclick="window.location.href='estructura.html'">
+          <div class="ci" style="background:rgba(0,82,204,.15)"><i class="fas fa-sitemap" style="color:var(--pr)"></i>
+          </div>
+          <h3>Estructura de Carpetas</h3>
+          <p>Árbol de directorios interactivo. Dónde va cada asset para cada tienda.</p>
+          <div style="margin-top:8px"><span class="tag tb">OBLIGATORIO</span></div>
+        </div>
+        <div class="card ck" onclick="window.location.href='cdn.html'">
+          <div class="ci" style="background:rgba(59,130,246,.15)"><i class="fas fa-globe" style="color:var(--inf)"></i>
+          </div>
+          <h3>CDN, Dominios y Cache</h3>
+          <p>Dominios por tienda, cache de SIRV y cómo forzar actualizaciones inmediatas.</p>
+        </div>
+        <div class="card ck" onclick="window.location.href='nomenclatura.html'">
+          <div class="ci" style="background:rgba(245,158,11,.15)"><i class="fas fa-tag" style="color:var(--wn)"></i>
+          </div>
+          <h3>Nomenclatura</h3>
+          <p>Formato estándar, tipos, usos y reglas generales para maquetas y banners.</p>
+          <div style="margin-top:8px"><span class="tag ty">GUÍA</span></div>
+        </div>
+        <div class="card ck" onclick="window.location.href='optimizacion.html'">
+          <div class="ci" style="background:rgba(22,163,74,.15)"><i class="fas fa-compress-arrows-alt"
+              style="color:var(--ok)"></i></div>
+          <h3>Optimización</h3>
+          <p>Pesos por dimensión, formatos permitidos, guía de videos y buenas prácticas.</p>
+          <div style="margin-top:8px"><span class="tag tg">TÉCNICO</span></div>
+        </div>
+        <div class="card ck" onclick="window.location.href='carpetas.html'">
+          <div class="ci" style="background:rgba(234,88,12,.15)"><i class="fas fa-folder-open"
+              style="color:var(--ac)"></i></div>
+          <h3>Carpetas Específicas</h3>
+          <p>Detalle de home, dinámicos, banners, catalog, landings y algolia.</p>
+        </div>
+        <div class="card ck" onclick="window.location.href='herramientas.html'">
+          <div class="ci" style="background:rgba(168,85,247,.15)"><i class="fas fa-wrench" style="color:#9333ea"></i>
+          </div>
+          <h3>Herramientas</h3>
+          <p>URL dinámica SIRV, validador de nombres y calculadoras de peso.</p>
+          <div style="margin-top:8px"><span class="tag"
+              style="background:rgba(168,85,247,.15);color:#9333ea">HERRAMIENTAS</span></div>
+        </div>
+      </div>
+  </div>
 
-    <!-- Referencia al script principal -->
-    <script src="script.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    renderLayout('index', 'Inicio', 'Hub');
+  </script>
 </body>
 </html>

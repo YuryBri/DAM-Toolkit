@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimización - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-layout" style="display: none;">
+      <div class="ph">
+        <h1>Optimización de Assets</h1>
+        <p>Pesos, formatos y buenas prácticas para imágenes y videos antes de subir a SIRV.</p>
+      </div>
+
+      <div class="st">Optimización de Imágenes</div>
+      <div class="al aw"><i class="fas fa-exclamation-circle"></i><span><strong>Formatos preferidos: WebP o SVG.</strong> Priorice estos formatos para mejor rendimiento web, aunque JPG/PNG pueden estar permitidos si están altamente optimizados.</span></div>
+      <div class="tw">
+        <table>
+          <thead>
+            <tr>
+              <th>Dimensión (ancho máximo)</th>
+              <th>Peso ideal</th>
+              <th>Peso máximo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hasta <strong>400 px</strong></td>
+              <td>10 – 30 KB</td>
+              <td><span class="tag tg">40 KB</span></td>
+            </tr>
+            <tr>
+              <td><strong>401 – 800 px</strong></td>
+              <td>30 – 60 KB</td>
+              <td><span class="tag ty">80 KB</span></td>
+            </tr>
+            <tr>
+              <td><strong>801 – 1300 px</strong></td>
+              <td>40 – 100 KB</td>
+              <td><span class="tag ty">120 KB</span></td>
+            </tr>
+            <tr>
+              <td>Más de <strong>1300 px</strong></td>
+              <td>90 – 130 KB</td>
+              <td><span class="tag tr">150 KB</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="st">Optimización de Videos</div>
+      <div class="grid g2" style="margin-bottom:14px">
+        <div class="card">
+          <h3 style="margin-bottom:10px"><i class="fas fa-cog"
+              style="color:var(--pr);margin-right:6px"></i>Especificaciones técnicas</h3>
+          <table style="width:100%;border-collapse:collapse;font-size:14px">
+            <tr style="border-bottom:1px solid var(--bd)">
+              <td style="padding:5px 0;color:var(--tx2)">Resolución máxima</td>
+              <td style="text-align:right;font-weight:600">1920 px (1080p)</td>
+            </tr>
+            <tr>
+              <td style="padding:5px 0;color:var(--tx2)">Formato recomendado</td>
+              <td style="text-align:right;font-weight:600">MP4 (H.264)</td>
+            </tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:10px"><i class="fas fa-lightbulb"
+              style="color:var(--wn);margin-right:6px"></i>Buenas prácticas</h3>
+          <ul style="list-style:none;font-size:14px;color:var(--tx2)">
+            <li style="padding:5px 0;border-bottom:1px solid var(--bd)">Mostrar lo más importante en los primeros 5–10
+              segundos</li>
+            <li style="padding:5px 0;border-bottom:1px solid var(--bd)">Evitar intros largas</li>
+            <li style="padding:5px 0">Usar videos largos solo si están justificados</li>
+          </ul>
+        </div>
+      </div>
+      <div class="grid g2">
+        <div class="tw">
+          <table>
+            <thead>
+              <tr>
+                <th>Tipo de video</th>
+                <th>Ideal</th>
+                <th>Máximo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Video principal</strong></td>
+                <td>2 – 8 MB</td>
+                <td><span class="tag tr">10 MB</span></td>
+              </tr>
+              <tr>
+                <td><strong>Video adicional</strong></td>
+                <td>2 – 5 MB</td>
+                <td><span class="tag ty">8 MB</span></td>
+              </tr>
+              <tr>
+                <td><strong>Video pequeño</strong></td>
+                <td>1 – 2.5 MB</td>
+                <td><span class="tag tg">3 MB</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tw">
+          <table>
+            <thead>
+              <tr>
+                <th>Contexto</th>
+                <th>Duración recomendada</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Home</td>
+                <td>5 – 20 segundos</td>
+              </tr>
+              <tr>
+                <td>Categoría</td>
+                <td>5 – 30 segundos</td>
+              </tr>
+              <tr>
+                <td>PDP (página de producto)</td>
+                <td>30 – 90 segundos</td>
+              </tr>
+              <tr>
+                <td>Landings</td>
+                <td>5 – 60 segundos</td>
+              </tr>
+              <tr>
+                <td>Videos de fondo</td>
+                <td>5 – 15 segundos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script>
+    renderLayout('optimizacion', 'Optimización', 'Assets');
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carpetas Específicas - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="app-layout" style="display: none;">
+    <div class="ph">
+      <h1>Carpetas Específicas</h1>
+      <p>Detalle de cada carpeta bajo <code>/ecommerce/</code>: contenido, organización y políticas de depuración.
+      </p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(59,130,246,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-home" style="color:var(--inf);font-size:14px"></i></div>
+          <h3>HOME</h3><span class="tag tb" style="margin-left:auto;font-size:10px">Todas las tiendas</span>
+        </div>
+        <p style="font-size:14px;color:var(--tx2);margin-bottom:8px">Subcarpetas: <code>botones-categorias</code> ·
+          <code>beneficios</code> · <code>medios-pago</code> · <code>visuales</code>
+        </p>
+        <div class="al ai" style="margin:0;padding:8px 12px;font-size:12px"><i class="fas fa-clock"></i><span>Contenido
+            mayormente estático. Revisión anual.</span></div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(245,158,11,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-sync" style="color:var(--wn);font-size:14px"></i></div>
+          <h3>DINÁMICOS</h3><span class="tag ty" style="margin-left:auto;font-size:10px">Alta rotación</span>
+        </div>
+        <ul style="list-style:none;font-size:14px;color:var(--tx2)">
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Contenidos de alta rotación</li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Organización por año, mes y evento</li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Depuración trimestral o semestral</li>
+          <li style="padding:4px 0">Optimización obligatoria</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(220,38,38,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-ad" style="color:var(--er);font-size:14px"></i></div>
+          <h3>BANNERS</h3><span class="tag tr" style="margin-left:auto;font-size:10px">Cache corto</span>
+        </div>
+        <p style="font-size:14px;color:var(--tx2);margin-bottom:6px">Formato:
+          <code>[tienda]-[marca]-[ean o campaña]-[zona].webp</code>
+        </p>
+        <p style="font-size:14px;color:var(--tx2);margin-bottom:8px">Prefijos: <code>ak</code> · <code>kt</code> ·
+          <code>alkp</code> · <code>ka</code>
+        </p>
+        <div class="al aw" style="margin:0;padding:8px 12px;font-size:12px"><i
+            class="fas fa-exclamation-triangle"></i><span>Alkosto usa dominio especial:
+            <code>ads.dam.alkosto.com</code></span></div>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(22,163,74,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-file-pdf" style="color:var(--ok);font-size:14px"></i></div>
+          <h3>CATALOG</h3><span class="tag tg" style="margin-left:auto;font-size:10px">Transversal</span>
+        </div>
+        <ul style="list-style:none;font-size:14px;color:var(--tx2)">
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">PDFs transversales para cualquier tienda.</li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Van directamente en
+            <code>/ecommerce/catalog/</code>
+          </li>
+          <li style="padding:4px 0">El dominio CDN determina a qué tienda sirve.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(168,85,247,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-layer-group" style="color:#9333ea;font-size:14px"></i></div>
+          <h3>LANDINGS</h3><span class="tag"
+            style="margin-left:auto;background:rgba(168,85,247,.15);color:#9333ea;font-size:10px">brands · blogs · cat ·
+            inst</span>
+        </div>
+        <ul style="list-style:none;font-size:14px;color:var(--tx2)">
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Recursos para brands, blogs, categorías e
+            institucional</li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)"><strong style="color:var(--er)">No eliminar
+              archivos activos sin validar</strong></li>
+          <li style="padding:4px 0">Depurar solo cuando la landing se actualiza o deja de usarse</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:10px">
+          <div class="ci" style="background:rgba(234,88,12,.15);margin-bottom:0;width:30px;height:30px"><i
+              class="fas fa-search" style="color:var(--ac);font-size:14px"></i></div>
+          <h3>ALGOLIA</h3><span class="tag ty" style="margin-left:auto;font-size:10px">Validar con equipo
+            búsqueda</span>
+        </div>
+        <ul style="list-style:none;font-size:14px;color:var(--tx2)">
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">Íconos y recursos visuales de facetas</li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)"><strong style="color:var(--wn)">Cambios validar
+              con el equipo de búsqueda</strong></li>
+          <li style="padding:4px 0;border-bottom:1px solid var(--bd)">SVG preferido</li>
+          <li style="padding:4px 0">WebP cuando aplique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script>
+    renderLayout('carpetas', 'Carpetas Específicas', 'Guía');
+  </script>
+</body>
+
+</html>

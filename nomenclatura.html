@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomenclatura - DAM Toolkit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app-layout" style="display: none;">
+      <div class="ph">
+        <h1>Nomenclatura de Archivos</h1>
+        <p>Reglas oficiales para nombrar todos los assets del ecosistema e-commerce.</p>
+      </div>
+      <div class="st">Reglas Generales</div>
+      <div class="tw" style="margin-bottom:16px">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Regla</th>
+              <th>Correcto</th>
+              <th>Incorrecto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag tr">1</span></td>
+              <td>Solo minúsculas</td>
+              <td><code>hero-cont-celulares.webp</code></td>
+              <td><code>Hero-Cont-Celulares.webp</code></td>
+            </tr>
+            <tr>
+              <td><span class="tag tr">2</span></td>
+              <td>Guiones medios, no espacios ni _</td>
+              <td><code>boton-fun-filtro.webp</code></td>
+              <td><code style="text-decoration:line-through">boton_fun filtro.webp</code></td>
+            </tr>
+            <tr>
+              <td><span class="tag tr">3</span></td>
+              <td>Sin acentos ni caracteres especiales</td>
+              <td><code>camara-digital.webp</code></td>
+              <td><code style="text-decoration:line-through">cámara_digital.webp</code></td>
+            </tr>
+            <tr>
+              <td><span class="tag ty">4</span></td>
+              <td>Nombres claros y semánticos</td>
+              <td><code>hero-cont-linea-celulares.webp</code></td>
+              <td><code style="text-decoration:line-through">img001-final.webp</code></td>
+            </tr>
+            <tr>
+              <td><span class="tag ty">5</span></td>
+              <td>No repetir info de la URL</td>
+              <td><code>hero-dest-product.webp</code></td>
+              <td><code style="text-decoration:line-through">alkosto-home-alkosto-hero.webp</code></td>
+            </tr>
+            <tr>
+              <td><span class="tag tg">6</span></td>
+              <td>URL máximo 150 caracteres</td>
+              <td colspan="2">Contar los caracteres totales de la ruta + nombre</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="st">Formato estándar — Maquetas</div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-family:var(--mono);font-size:15px;margin-bottom:10px">
+          <span
+            style="background:rgba(59,130,246,.15);color:var(--inf);padding:2px 6px;border-radius:4px">[tipo]</span><span
+            style="color:var(--tx3)">-</span><span
+            style="background:rgba(22,163,74,.15);color:var(--ok);padding:2px 6px;border-radius:4px">[uso]</span><span
+            style="color:var(--tx3)">-</span><span
+            style="background:rgba(217,119,6,.15);color:var(--wn);padding:2px 6px;border-radius:4px">[detalle]</span><span
+            style="color:var(--tx3)">.</span><span
+            style="background:rgba(220,38,38,.15);color:var(--er);padding:2px 6px;border-radius:4px">[ext]</span>
+        </div>
+        <p style="font-size:14px;color:var(--tx2)">Ej: <code>hero-cont-linea-celulares.webp</code> ·
+          <code>boton-fun-filtro-productos.webp</code> · <code>video-descrip-gana-mitad.mp4</code>
+        </p>
+        <p style="font-size:12px;color:var(--tx3);margin-top:5px">El detalle: 1 a 3 palabras, sin fechas, sin números
+          confusos.</p>
+      </div>
+
+      <div class="st">Formato estándar — Banners comerciales</div>
+      <div class="card" style="margin-bottom:14px">
+        <div style="font-family:var(--mono);font-size:15px;margin-bottom:10px">
+          <span
+            style="background:rgba(59,130,246,.15);color:var(--inf);padding:2px 6px;border-radius:4px">[tienda]</span><span
+            style="color:var(--tx3)">-</span><span
+            style="background:rgba(22,163,74,.15);color:var(--ok);padding:2px 6px;border-radius:4px">[marca]</span><span
+            style="color:var(--tx3)">-</span><span
+            style="background:rgba(217,119,6,.15);color:var(--wn);padding:2px 6px;border-radius:4px">[ean o
+            campaña]</span><span style="color:var(--tx3)">-</span><span
+            style="background:rgba(234,88,12,.15);color:var(--ac);padding:2px 6px;border-radius:4px">[zona]</span><span
+            style="color:var(--tx3)">.</span><span
+            style="background:rgba(220,38,38,.15);color:var(--er);padding:2px 6px;border-radius:4px">webp</span>
+        </div>
+        <p style="font-size:14px;color:var(--tx2)">Prefijos de tienda: <code>ak</code> = Alkosto · <code>kt</code> =
+          Ktronix · <code>alkp</code> = Alkomprar · <code>ka</code> = Kalley</p>
+      </div>
+
+      <div class="st">Tipos y Usos</div>
+      <div class="grid g2">
+        <div>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>hero</code></td><td>Pieza principal</td></tr>
+                <tr><td><code>banner</code></td><td>Pieza promocional</td></tr>
+                <tr><td><code>card</code></td><td>Bloque visual clicable</td></tr>
+                <tr><td><code>fondo</code></td><td>Background</td></tr>
+                <tr><td><code>icono</code></td><td>Elemento gráfico pequeño</td></tr>
+                <tr><td><code>boton</code></td><td>Botón gráfico</td></tr>
+                <tr><td><code>video</code></td><td>Archivo de video</td></tr>
+                <tr><td><code>titulo</code></td><td>Imagen de título</td></tr>
+                <tr><td><code>logo</code></td><td>Elemento de marca</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="tw" style="margin-bottom:10px">
+            <table>
+              <thead>
+                <tr>
+                  <th>Uso — imágenes</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>nav</code></td><td>Navegación</td></tr>
+                <tr><td><code>cta</code></td><td>Llamado a la acción</td></tr>
+                <tr><td><code>cont</code></td><td>Contenido principal</td></tr>
+                <tr><td><code>dest</code></td><td>Foco visual</td></tr>
+                <tr><td><code>fun</code></td><td>Interacción</td></tr>
+                <tr><td><code>deco</code></td><td>Solo decorativo</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="tw">
+            <table>
+              <thead>
+                <tr>
+                  <th>Uso — videos</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><code>descrip</code></td><td>Presentación</td></tr>
+                <tr><td><code>tuto</code></td><td>Tutorial</td></tr>
+                <tr><td><code>promo</code></td><td>Campañas</td></tr>
+                <tr><td><code>info</code></td><td>Informativo</td></tr>
+                <tr><td><code>inst</code></td><td>Institucional</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="st">Ejemplos</div>
+      <div class="exrow">
+        <div class="ex exg">
+          <div class="exl exlg"><i class="fas fa-check-circle"></i>Correcto</div>
+          <div class="exc">
+            hero-cont-linea-celulares.webp<br>boton-fun-filtro-productos.webp<br>video-descrip-gana-mitad.mp4<br>ak-samsung-123456-top.webp<br>logo-alkosto-principal.svg
+          </div>
+        </div>
+        <div class="ex exr">
+          <div class="exl exlr"><i class="fas fa-times-circle"></i>Incorrecto</div>
+          <div class="exc">Hero CONT Línea Celulares.jpg<br>boton_fun_filtro.png<br>Video-Descrip-Final-v2.MP4<br>ALKOSTO-samsung.webp<br>Logo Alkosto Principal.SVG</div>
+        </div>
+      </div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script>
+    renderLayout('nomenclatura', 'Nomenclatura', 'Guía');
+  </script>
+</body>
+</html>
