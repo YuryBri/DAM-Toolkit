@@ -1,0 +1,43 @@
+=== CUESTIONARIO DE RUTAS DEL SERVIDOR DAM ===
+
+Instrucciones: Rellena o añade la información debajo de cada punto. 
+Cuando termines, confírmalo en el chat para que yo proceda a crear la herramienta tipo "Asistente" 
+basado en tus respuestas.
+
+1. RUTAS PRINCIPALES:
+Aparte de las que ya conozco (/ecommerce/home/, /ecommerce/banners/, /ecommerce/landings/, /ecommerce/catalog/), ¿Existen más rutas frecuentes donde los diseñadores deban subir contenido? (Ej: /correos/, /app/, /marcas-aliadas/).
+- RESPUESTA: por el momento no esas son todas, pero ellos usanran más que todo /ecommerce/banners/ para subir las iamgeens de promociones semanales, y /ecommerce/dinamicos/ cuando ayuden a realizar el diseño de los banners dinamicos los recursos se subiran a esta carpecta, si llega el caso que es muy pco usal si ayuda en el home, subirian el material en /ecommerce/home/,teniendo en cuenta que cada uno tiene su repctiva estructura
+
+
+2. SUBCARPETAS DE LANDINGS:
+En la ruta /ecommerce/landings/[tienda]/[tipo]/... ¿Cuáles suelen ser los "tipos" de landings típicos? (Ej: informativa, marca, deporte, electrodomésticos, especiales...)
+- RESPUESTA:los tipos suelen ser carpectas con etsos nombres: blogs,brands,cate,institucional, adentro de cada una de estas carpetas hay mas subcarpetas, por ejemplo en brands hay 37 carpetas, cada una con el nombre de la marca, en cate hay 8 carpetas, cada una con el nombre de la categoria, en institucional hay 2 carpetas, cada una con el nombre de la institucional, en blogs hay 1 carpeta, con el nombre del blog
+
+
+3. CONTENIDO PROMOCIONAL (BANNERS Y CAMPAÑAS):
+¿Todo el contenido promocional "temporal" (como Hotdays, Cyberdays o de fin de semana) va exclusivamente a la ruta de "banners", o a veces deben subir estas campañas en otras rutas dependiendo de dónde se mostrará?
+- RESPUESTA:siempre va a la carpeta de banners, pero hay que tener en cuenta que hay subcarpetas, con cada tienda y adentro de cada tienda, esta la catgoria, y adentro de la categoria hay la separación por semana, y adentro ya estan los banners, esto para que los ajusntes del sabado sea facil busca una imagen si reuqiere un cambio.
+
+
+4. FACTOR DECISIVO PARA EL USUARIO:
+Si un diseñador o usuario no gráfico no sabe dónde subir su archivo, ¿cuál es la primera pregunta que deberíamos hacerle para reducir las opciones? 
+(Ej: "¿Dónde se va a exhibir esto en la página?", "¿Qué temporalidad/duración tendrá publicado?", "¿A qué tipo de formato corresponde?")
+- RESPUESTA: 
+todos, ya que puede ayudar ser más especifico, y hay que guiarnos de la estructura.html
+
+5. EXCEPCIONES O REGLAS ESPECIALES:
+¿Existe alguna "regla de oro" que deban saber para no equivocarse nunca de carpeta (ej. "los videos NUNCA van en catalog", o "la ruta de 'home' es solo para lo que dura más de un mes")?
+- RESPUESTA:
+catalog la getsiona directamente nestor, la carpectca banners es actualizada cada semana, LAs capectas como landing y home, si van a eliminar algo es preferiblemente preguntar si esta siendo usando ya que podría afectar algo, 
+
+
+(Si necesitas añadir algún otro detalle importante sobre cómo deciden ustedes dónde subir el material, agrégalo aquí abajo):
+apara subir videos a KEVEL, usando html con inscrutación es asi:
+<a href="href="{{url}}&url=linkPara ir a la promoción" target="_self">
+  <video autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="metadata">
+    <!-- 2. WEBM como fallback secundario -->
+    <source src="videoconsu ubicacion.mp4?profile=hls&amp;quality=70&amp;format=webm" type="video/webm" "="">
+    <!-- 1. MP4 primero (clave para iPhone) -->
+    <source src="videoconsu ubicacion.mp4" type="video/mp4"> 
+  </video> 
+</a>

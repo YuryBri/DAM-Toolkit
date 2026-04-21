@@ -6,97 +6,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio - DAM Toolkit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <div id="app-layout" style="display: none;">
-      <div class="ph">
-        <h1>Documentación General del Entorno SIRV</h1>
-        <p>Guía de organización, nomenclatura y optimización para assets de <strong>Alkosto</strong>,
-          <strong>Ktronix</strong>, <strong>Alkomprar</strong> y <strong>Kalley</strong>.
-        </p>
+    <div class="ph">
+      <h1>Documentación General del Entorno SIRV</h1>
+      <p>Guía de organización, nomenclatura y optimización para assets de <strong>Alkosto</strong>,
+        <strong>Ktronix</strong>, <strong>Alkomprar</strong> y <strong>Kalley</strong>.
+      </p>
+    </div>
+    <div class="tipcard">
+      <div class="tiplbl"><i class="fas fa-bolt"></i>Objetivo del sistema</div>
+      <h3>Mantener un entorno limpio, escalable y de alto rendimiento</h3>
+      <p>Define estructura de carpetas, reglas de nomenclatura, políticas de depuración y guías de optimización para
+        facilitar la colaboración entre equipos y mejorar el rendimiento del sitio.</p>
+    </div>
+    <div class="st">Resumen</div>
+    <div class="grid g4" style="margin-bottom:20px">
+      <div class="stat">
+        <div class="stlbl">Tiendas</div>
+        <div class="stval">4</div>
+        <div class="stsub">Alkosto · Ktronix · Kalley · Alkomprar</div>
       </div>
-      <div class="tipcard">
-        <div class="tiplbl"><i class="fas fa-bolt"></i>Objetivo del sistema</div>
-        <h3>Mantener un entorno limpio, escalable y de alto rendimiento</h3>
-        <p>Define estructura de carpetas, reglas de nomenclatura, políticas de depuración y guías de optimización para
-          facilitar la colaboración entre equipos y mejorar el rendimiento del sitio.</p>
+      <div class="stat">
+        <div class="stlbl">Secciones DAM</div>
+        <div class="stval">6</div>
+        <div class="stsub">home · dinámicos · banners · catalog · landings · algolia</div>
       </div>
-      <div class="st">Resumen</div>
-      <div class="grid g4" style="margin-bottom:20px">
-        <div class="stat">
-          <div class="stlbl">Tiendas</div>
-          <div class="stval">4</div>
-          <div class="stsub">Alkosto · Ktronix · Kalley · Alkomprar</div>
-        </div>
-        <div class="stat">
-          <div class="stlbl">Secciones DAM</div>
-          <div class="stval">6</div>
-          <div class="stsub">home · dinámicos · banners · catalog · landings · algolia</div>
-        </div>
-        <div class="stat">
-          <div class="stlbl">Herramientas</div>
-          <div class="stval">2</div>
-          <div class="stsub">URL dinámica · Validador · Calculadoras</div>
-        </div>
-        <div class="stat">
-          <div class="stlbl">Ruta base</div>
-          <div class="stval" style="font-size:17px;font-family:var(--mono)">/ecommerce/</div>
-          <div class="stsub">Todas las tiendas</div>
-        </div>
+      <div class="stat">
+        <div class="stlbl">Herramientas</div>
+        <div class="stval">2</div>
+        <div class="stsub">URL dinámica · Validador · Calculadoras</div>
       </div>
-      <div class="st">Módulos</div>
-      <div class="grid g3">
-        <div class="card ck" onclick="window.location.href='estructura.html'">
-          <div class="ci" style="background:rgba(0,82,204,.15)"><i class="fas fa-sitemap" style="color:var(--pr)"></i>
-          </div>
-          <h3>Estructura de Carpetas</h3>
-          <p>Árbol de directorios interactivo. Dónde va cada asset para cada tienda.</p>
-          <div style="margin-top:8px"><span class="tag tb">OBLIGATORIO</span></div>
-        </div>
-        <div class="card ck" onclick="window.location.href='cdn.html'">
-          <div class="ci" style="background:rgba(59,130,246,.15)"><i class="fas fa-globe" style="color:var(--inf)"></i>
-          </div>
-          <h3>CDN, Dominios y Cache</h3>
-          <p>Dominios por tienda, cache de SIRV y cómo forzar actualizaciones inmediatas.</p>
-        </div>
-        <div class="card ck" onclick="window.location.href='nomenclatura.html'">
-          <div class="ci" style="background:rgba(245,158,11,.15)"><i class="fas fa-tag" style="color:var(--wn)"></i>
-          </div>
-          <h3>Nomenclatura</h3>
-          <p>Formato estándar, tipos, usos y reglas generales para maquetas y banners.</p>
-          <div style="margin-top:8px"><span class="tag ty">GUÍA</span></div>
-        </div>
-        <div class="card ck" onclick="window.location.href='optimizacion.html'">
-          <div class="ci" style="background:rgba(22,163,74,.15)"><i class="fas fa-compress-arrows-alt"
-              style="color:var(--ok)"></i></div>
-          <h3>Optimización</h3>
-          <p>Pesos por dimensión, formatos permitidos, guía de videos y buenas prácticas.</p>
-          <div style="margin-top:8px"><span class="tag tg">TÉCNICO</span></div>
-        </div>
-        <div class="card ck" onclick="window.location.href='carpetas.html'">
-          <div class="ci" style="background:rgba(234,88,12,.15)"><i class="fas fa-folder-open"
-              style="color:var(--ac)"></i></div>
-          <h3>Carpetas Específicas</h3>
-          <p>Detalle de home, dinámicos, banners, catalog, landings y algolia.</p>
-        </div>
-        <div class="card ck" onclick="window.location.href='herramientas.html'">
-          <div class="ci" style="background:rgba(168,85,247,.15)"><i class="fas fa-wrench" style="color:#9333ea"></i>
-          </div>
-          <h3>Herramientas</h3>
-          <p>URL dinámica SIRV, validador de nombres y calculadoras de peso.</p>
-          <div style="margin-top:8px"><span class="tag"
-              style="background:rgba(168,85,247,.15);color:#9333ea">HERRAMIENTAS</span></div>
-        </div>
+      <div class="stat">
+        <div class="stlbl">Ruta base</div>
+        <div class="stval" style="font-size:17px;font-family:var(--mono)">/ecommerce/</div>
+        <div class="stsub">Todas las tiendas</div>
       </div>
+    </div>
+    <div class="st">Módulos</div>
+    <div class="grid g3">
+      <div class="card ck" onclick="window.location.href='estructura.html'">
+        <div class="ci" style="background:rgba(0,82,204,.15)"><i class="fas fa-sitemap" style="color:var(--pr)"></i>
+        </div>
+        <h3>Estructura de Carpetas</h3>
+        <p>Árbol de directorios interactivo. Dónde va cada asset para cada tienda.</p>
+        <div style="margin-top:8px"><span class="tag tb">OBLIGATORIO</span></div>
+      </div>
+      <div class="card ck" onclick="window.location.href='cdn.html'">
+        <div class="ci" style="background:rgba(59,130,246,.15)"><i class="fas fa-globe" style="color:var(--inf)"></i>
+        </div>
+        <h3>CDN, Dominios y Cache</h3>
+        <p>Dominios por tienda, cache de SIRV y cómo forzar actualizaciones inmediatas.</p>
+      </div>
+      <div class="card ck" onclick="window.location.href='nomenclatura.html'">
+        <div class="ci" style="background:rgba(245,158,11,.15)"><i class="fas fa-tag" style="color:var(--wn)"></i>
+        </div>
+        <h3>Nomenclatura</h3>
+        <p>Formato estándar, tipos, usos y reglas generales para maquetas y banners.</p>
+        <div style="margin-top:8px"><span class="tag ty">GUÍA</span></div>
+      </div>
+      <div class="card ck" onclick="window.location.href='optimizacion.html'">
+        <div class="ci" style="background:rgba(22,163,74,.15)"><i class="fas fa-compress-arrows-alt"
+            style="color:var(--ok)"></i></div>
+        <h3>Optimización</h3>
+        <p>Pesos por dimensión, formatos permitidos, guía de videos y buenas prácticas.</p>
+        <div style="margin-top:8px"><span class="tag tg">TÉCNICO</span></div>
+      </div>
+      <div class="card ck" onclick="window.location.href='carpetas.html'">
+        <div class="ci" style="background:rgba(234,88,12,.15)"><i class="fas fa-folder-open"
+            style="color:var(--ac)"></i></div>
+        <h3>Carpetas Específicas</h3>
+        <p>Detalle de home, dinámicos, banners, catalog, landings y algolia.</p>
+      </div>
+      <div class="card ck" onclick="window.location.href='herramientas.html'">
+        <div class="ci" style="background:rgba(168,85,247,.15)"><i class="fas fa-wrench" style="color:#9333ea"></i>
+        </div>
+        <h3>Herramientas</h3>
+        <p>URL dinámica SIRV, validador de nombres y calculadoras de peso.</p>
+        <div style="margin-top:8px"><span class="tag"
+            style="background:rgba(168,85,247,.15);color:#9333ea">HERRAMIENTAS</span></div>
+      </div>
+    </div>
   </div>
 
   <script src="js/layout.js"></script>
   <script>
-    renderLayout('index', 'Inicio', 'Hub');
+    renderLayout('index', 'Inicio', 'Información General');
   </script>
 </body>
+
 </html>
